@@ -4,8 +4,7 @@ A VSCode extension to simplify bracket, quote, and tag operations.
 It helps streamline selection changes, wrapping, replacement, and deletion of brackets during code editing.
 Designed to minimize the number of keybindings that require association.
 
-> For the **Japanese version**, please visit [こちら](https://github.com/wanyakomochimochi/bracketEx/blob/master/README.md)
-
+> For the **Japanese version**, please visit [こちら](https://github.com/wanyakomochimochi/bracketEx/blob/master/README.ja.md)
 
 ---
 
