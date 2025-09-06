@@ -35,20 +35,35 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.surroundWithInput = surroundWithInput;
 const vscode = __importStar(require("vscode"));
+const nls = __importStar(require("vscode-nls"));
+nls.config({ messageFormat: nls.MessageFormat.file })();
+const localize = nls.loadMessageBundle();
 function surroundWithInput() {
     const editor = vscode.window.activeTextEditor;
     if (!editor)
         return;
     const document = editor.document;
-    vscode.window.showInputBox({ prompt: '文字列で囲む:' }).then(value => {
+    vscode.window
+        .showInputBox({
+        prompt: localize("prompt.wrapWithString", "Wrap with string:"),
+    })
+        .then((value) => {
         var _a;
         if (!value || value.length === 0)
             return;
-        const matchingClose = { '(': ')', '{': '}', '[': ']', '"': '"', "'": "'", '`': '`', '<': '>' };
+        const matchingClose = {
+            "(": ")",
+            "{": "}",
+            "[": "]",
+            '"': '"',
+            "'": "'",
+            "`": "`",
+            "<": ">",
+        };
         const openChar = value;
         const closeChar = (_a = matchingClose[openChar]) !== null && _a !== void 0 ? _a : openChar;
         const edits = [];
-        editor.selections.forEach(selection => {
+        editor.selections.forEach((selection) => {
             let startPos;
             let endPos;
             if (selection.isEmpty) {
@@ -65,14 +80,14 @@ function surroundWithInput() {
             edits.push({ start: startPos, end: endPos });
         });
         if (edits.length === 0) {
-            vscode.window.showInformationMessage('囲む対象が見つかりません');
+            vscode.window.showInformationMessage(localize("message.noTargetToWrap", "No target found to wrap"));
             return;
         }
-        editor.edit(editBuilder => {
+        editor.edit((editBuilder) => {
             // 文字挿入は後ろから前に行うとオフセット崩れ防止
             edits
                 .sort((a, b) => document.offsetAt(b.start) - document.offsetAt(a.start))
-                .forEach(e => {
+                .forEach((e) => {
                 editBuilder.insert(e.start, openChar);
                 editBuilder.insert(e.end, closeChar);
             });

@@ -1,31 +1,52 @@
 {
-  "name": "bracket_quote_tools",
+  "name": "bracket-quote-tools",
   "displayName": "Bracket & Quote Tools",
   "description": "",
   "version": "1.0.0",
-  "publisher": "your-name",
+  "publisher": "wanyako",
   "engines": {
     "vscode": "^1.80.0"
   },
   "categories": [
-    "Other"
+    "Programming Languages"
+  ],
+  "keywords": [
+    "bracket",
+    "quote",
+    "wrap",
+    "selection",
+    "editor",
+    "typescript",
+    "javascript",
+    "python",
+    "java",
+    "csharp",
+    "c",
+    "cpp",
+    "code",
+    "vs-code",
+    "replace"
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wanyakomochimochi/bracketEx"
+  },
   "contributes": {
     "commands": [
       {
-        "command": "bracket_quote_tools.changeSelection",
+        "command": "extension.changeSelection",
         "title": "bracket changeSelection",
         "category": "Cursor To Search Selector"
       },
       {
-        "command": "bracket_quote_tools.surroundWithInput",
-        "title": "bracket removeSelection",
+        "command": "bextension.surroundWithInput",
+        "title": "bracket surroundSelection",
         "category": "Cursor To Search Selector"
       },
       {
-        "command": "bracket_quote_tools.replaceBracketsOrQuotes",
+        "command": "extension.replaceBracketsOrQuotes",
         "title": "bracket replaceSelection",
         "category": "Cursor To Search Selector"
       }
@@ -37,7 +58,11 @@
   },
   "devDependencies": {
     "@types/node": "^24.3.0",
+    "esbuild": "^0.25.9",
     "typescript": "^5.9.2",
     "vscode": "^1.1.37"
+  },
+  "dependencies": {
+    "vscode-nls": "^5.2.0"
   }
 }

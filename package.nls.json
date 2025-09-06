@@ -1,0 +1,7 @@
+{
+  "message.noBrackets": "No brackets or quotes found",
+  "message.noOuterBrackets": "No brackets or quotes found outside the cursor",
+  "prompt.wrapWithString": "Wrap with string:",
+  "message.noTargetToWrap": "No target found to wrap",
+  "prompt.replaceBracketQuote": "Replace bracket/quote:"
+}

@@ -1,0 +1,7 @@
+{
+  "message.noBrackets": "括弧・クォートが見つかりません",
+  "message.noOuterBrackets": "カーソルの外側に括弧・クォートが見つかりません",
+  "prompt.wrapWithString": "文字列で囲む:",
+  "message.noTargetToWrap": "囲む対象が見つかりません",
+  "prompt.replaceBracketQuote": "括弧・クォートを置換:"
+}

@@ -1,0 +1,12 @@
+# Changelog
+
+All notable changes to this extension will be documented here.
+
+---
+
+## [1.0.0] - 2025-09-07
+
+- Initial release
+- `changeSelection` command
+- `replaceBracketsOrQuotes` command
+- `surroundWithInput` command

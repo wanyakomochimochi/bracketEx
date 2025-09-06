@@ -35,20 +35,28 @@ var __importStar = (this && this.__importStar) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.replaceBracketsOrQuotes = replaceBracketsOrQuotes;
 const vscode = __importStar(require("vscode"));
+const nls = __importStar(require("vscode-nls"));
 const findAllPairs_1 = require("../utils/findAllPairs");
+nls.config({ messageFormat: nls.MessageFormat.file })();
+const localize = nls.loadMessageBundle();
 function replaceBracketsOrQuotes() {
     const editor = vscode.window.activeTextEditor;
     if (!editor)
         return;
+    //debug
+    // デバッグ用：正しいキーで文字列を取得できるか確認
+    console.log(localize("prompt.replaceBracketQuote", "Replace bracket/quote:"));
     const document = editor.document;
     const text = document.getText();
     const pairs = (0, findAllPairs_1.findAllPairs)(text);
     if (pairs.length === 0) {
-        vscode.window.showInformationMessage("括弧・クォートが見つかりません");
+        vscode.window.showInformationMessage(localize("message.noBrackets", "No brackets or quotes found"));
         return;
     }
     vscode.window
-        .showInputBox({ prompt: "Replace bracket/quote:" })
+        .showInputBox({
+        prompt: localize("prompt.replaceBracketQuote", "Replace bracket/quote:"),
+    })
         .then((value) => {
         if (value === undefined)
             return;
@@ -82,7 +90,7 @@ function replaceBracketsOrQuotes() {
             });
         });
         if (edits.length === 0) {
-            vscode.window.showInformationMessage("カーソルの外側に括弧・クォートが見つかりません");
+            vscode.window.showInformationMessage(localize("message.noOuterBrackets", "No brackets or quotes found outside the cursor"));
             return;
         }
         editor
