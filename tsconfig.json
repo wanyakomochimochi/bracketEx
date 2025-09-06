@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "outDir": "out",
+    "rootDir": "./bracketEx/src",
+    "strict": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["es2016", "dom"]
+  },
+  "include": ["./bracketEx/src/**/*.ts"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}

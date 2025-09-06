@@ -1,0 +1,39 @@
+{
+  "name": "bracketex",
+  "displayName": "Bracket Ex",
+  "description": "An extension to manipulate brackets and quotes in your code.",
+  "version": "0.1.0",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "activationEvents": [],
+  "main": "./src/extension.ts",
+  "contributes": {
+    "commands": [
+      {
+        "command": "bracketEx.changeSelection",
+        "title": "Change Selection"
+      },
+      {
+        "command": "bracketEx.surroundWithInput",
+        "title": "Remove Brackets or Quotes"
+      },
+      {
+        "command": "bracketEx.replaceBracketsOrQuotes",
+        "title": "Replace Brackets or Quotes"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./tsconfig.json",
+    "watch": "tsc -watch -p ./tsconfig.json",
+    "postinstall": "node ./out/src/install.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "vscode": "^1.1.36",
+    "eslint": "^7.0.0"
+  }
+}

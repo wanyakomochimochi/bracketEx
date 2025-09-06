@@ -1,0 +1,43 @@
+{
+  "name": "bracket_quote_tools",
+  "displayName": "Bracket & Quote Tools",
+  "description": "",
+  "version": "1.0.0",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "bracket_quote_tools.changeSelection",
+        "title": "bracket changeSelection",
+        "category": "Cursor To Search Selector"
+      },
+      {
+        "command": "bracket_quote_tools.surroundWithInput",
+        "title": "bracket removeSelection",
+        "category": "Cursor To Search Selector"
+      },
+      {
+        "command": "bracket_quote_tools.replaceBracketsOrQuotes",
+        "title": "bracket replaceSelection",
+        "category": "Cursor To Search Selector"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "typescript": "^5.9.2",
+    "vscode": "^1.1.37"
+  }
+}
