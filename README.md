@@ -68,9 +68,9 @@ Basic bracket and quote operations work in other languages, but **comments and s
 
 Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and search for:
 
-- BracketEx: Change Selection
-- BracketEx: Replace Brackets or Quotes
-- BracketEx: Surround With Input
+- extension: Change Selection
+- extension: Replace Brackets or Quotes
+- extension: Surround With Input
 
 Or set up keyboard shortcuts (see below) for more efficient usage.
 
@@ -80,9 +80,9 @@ Or set up keyboard shortcuts (see below) for more efficient usage.
 
 | Command ID                          | Description                                        |
 | ----------------------------------- | -------------------------------------------------- |
-| `bracketEx.changeSelection`         | Change selection based on cursor and brackets/tags |
-| `bracketEx.surroundWithInput`       | Wrap the selection with user input                 |
-| `bracketEx.replaceBracketsOrQuotes` | Replace the current bracket or quote with another  |
+| `extension.changeSelection`         | Change selection based on cursor and brackets/tags |
+| `extension.surroundWithInput`       | Wrap the selection with user input                 |
+| `extension.replaceBracketsOrQuotes` | Replace the current bracket or quote with another  |
 
 ---
 
@@ -132,6 +132,6 @@ Bug reports and feature requests are accepted via GitHub Issues.
 
 Your contributions help improve this extension.
 
----
+_By **wanyako** (Japan)_
 
-by wanyako(Japan)
+---

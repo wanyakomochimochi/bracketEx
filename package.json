@@ -41,7 +41,7 @@
         "category": "Cursor To Search Selector"
       },
       {
-        "command": "bextension.surroundWithInput",
+        "command": "extension.surroundWithInput",
         "title": "bracket surroundSelection",
         "category": "Cursor To Search Selector"
       },

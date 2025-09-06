@@ -61,9 +61,9 @@ HTML タグや括弧、クォートなど自由に設定可能
 
 コマンドパレット (Ctrl+Shift+P / Cmd+Shift+P) で以下を検索
 
-- BracketEx: Change Selection
-- BracketEx: Replace Brackets or Quotes
-- BracketEx: Surround With Input
+- extension: Change Selection
+- extension: Replace Brackets or Quotes
+- extension: Surround With Input
 
 または、後述のキーボードショートカットを設定すると、より効率的に操作できます
 
@@ -71,9 +71,9 @@ HTML タグや括弧、クォートなど自由に設定可能
 
 | コマンド ID                         | 説明                                       |
 | ----------------------------------- | ------------------------------------------ |
-| `bracketEx.changeSelection`         | カーソル・括弧等に基づき選択範囲を変更     |
-| `bracketEx.surroundWithInput`       | 選択範囲をユーザー入力で囲む               |
-| `bracketEx.replaceBracketsOrQuotes` | 現在の括弧・クォートを別の文字に置き換える |
+| `extension.changeSelection`         | カーソル・括弧等に基づき選択範囲を変更     |
+| `extension.surroundWithInput`       | 選択範囲をユーザー入力で囲む               |
+| `extension.replaceBracketsOrQuotes` | 現在の括弧・クォートを別の文字に置き換える |
 
 ---
 
@@ -119,5 +119,7 @@ HTML タグや括弧、クォートなど自由に設定可能
 
 - バグ報告や機能改善の提案は GitHub Issues で受け付けています。
 - 拡張機能の改善にぜひご協力ください。
+
+_By **wanyako** (Japan)_
 
 ---

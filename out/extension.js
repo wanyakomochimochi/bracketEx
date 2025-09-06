@@ -40,9 +40,9 @@ const changeSelection_1 = require("./commands/changeSelection");
 const surroundWithInput_1 = require("./commands/surroundWithInput");
 const replaceBracketsOrQuotes_1 = require("./commands/replaceBracketsOrQuotes");
 function activate(context) {
-    const changeSelectionCommand = vscode.commands.registerCommand('bracketEx.changeSelection', changeSelection_1.changeSelection);
-    const removeBracketsCommand = vscode.commands.registerCommand('bracketEx.surroundWithInput', surroundWithInput_1.surroundWithInput);
-    const replaceBracketsCommand = vscode.commands.registerCommand('bracketEx.replaceBracketsOrQuotes', replaceBracketsOrQuotes_1.replaceBracketsOrQuotes);
+    const changeSelectionCommand = vscode.commands.registerCommand("extension.changeSelection", changeSelection_1.changeSelection);
+    const removeBracketsCommand = vscode.commands.registerCommand("extension.surroundWithInput", surroundWithInput_1.surroundWithInput);
+    const replaceBracketsCommand = vscode.commands.registerCommand("extension.replaceBracketsOrQuotes", replaceBracketsOrQuotes_1.replaceBracketsOrQuotes);
     context.subscriptions.push(changeSelectionCommand);
     context.subscriptions.push(removeBracketsCommand);
     context.subscriptions.push(replaceBracketsCommand);

@@ -1,9 +1,8 @@
-src/**
-node_modules/**
-!out/**
-**/*.map
-test/**
-.vscode/**
-*.ts
-tsconfig.json
-/node_modules/
+src/**             # 開発用ソースは不要
+**/*.map           # ソースマップは不要
+test/**            # テストは不要
+.vscode/**         # VSCode 用の設定は不要
+tsconfig.json      # ビルド設定は不要
+node_modules/**    # node_modules 全除外
+!node_modules/vscode-languageclient/**  # 必要なら例外指定
+!out/**            # ビルド済みファイルだけ含める
