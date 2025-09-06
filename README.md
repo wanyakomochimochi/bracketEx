@@ -121,7 +121,7 @@ Add the following to `keybindings.json`:
 ## Developer Info
 
 {
-"repository": "https://github.com/yourname/bracket-quote-tools",
+"repository": "https://github.com/wanyakomochimochi/bracketEx",
 "license": "MIT",
 "vscodeVersion": "1.80+"
 }

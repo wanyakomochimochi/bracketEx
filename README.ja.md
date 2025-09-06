@@ -110,7 +110,7 @@ HTML タグや括弧、クォートなど自由に設定可能
 ## 開発者向け情報
 
 {
-"repository": "https://github.com/yourname/bracket-quote-tools",
+"repository": "https://github.com/wanyakomochimochi/bracketEx",
 "license": "MIT",
 "vscodeVersion": "1.80+"
 }

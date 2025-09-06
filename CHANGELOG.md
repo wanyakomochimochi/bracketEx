@@ -4,6 +4,10 @@ All notable changes to this extension will be documented here.
 
 ---
 
+## [1.0.3] - 2025-09-07
+
+- Minor Fix
+
 ## [1.0.2] - 2025-09-07
 
 - Resize Demo Image
