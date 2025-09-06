@@ -1,76 +1,125 @@
 # Bracket & Quote Tools
 
-VSCode での括弧、クォート、タグ操作を簡単にする拡張機能です。
-コード編集時の選択範囲変更、囲み、置換を効率化します。
+A VSCode extension to simplify bracket, quote, and tag operations.
+It helps streamline selection changes, wrapping, replacement, and deletion of brackets during code editing.
+Designed to minimize the number of keybindings that require association.
+
+> For the **Japanese version**, please visit [こちら](https://github.com/wanyakomochimochi/bracketEx/blob/master/README.md)
+
 
 ---
 
-## 主な機能
+## Main Features
 
-### 選択範囲の変更 (`changeSelection`)
+### Change Selection (`changeSelection`)
 
 ![Demo](assets/demo01.gif)
 
-カーソル位置から括弧やタグの範囲を自動で選択
-連続して実行することで、以下のように範囲が拡大する
+Automatically selects the range of brackets or tags from the cursor position.
+Executing repeatedly expands the selection as follows:
 
-1.  直近の括弧・タグを含まない内側全体
-2.  直近の括弧・タグを含む範囲全体
-3.  一つ外側の括弧・タグから見た内側全体
-4.  一つ外側の括弧・タグを含む範囲全体
-5.  以降は 3,4 の繰り返し
-6.  外側に括弧・タグが見つからなければ最初のカーソル位置に戻る
-    複数カーソルにも対応
+1. Inner content not including the nearest bracket/tag
+2. Entire range including the nearest bracket/tag
+3. Inner content relative to one outer bracket/tag
+4. Entire range including one outer bracket/tag
+5. Repeat steps 3 and 4
+6. If no outer bracket/tag is found, selection returns to the initial cursor position
 
-### 括弧・クォートの置換 (`replaceBracketsOrQuotes`)
+Supports multiple cursors.
+For HTML files, the selection expands in order: content → whole tag → parent tag content → entire parent tag.
+
+### Replace Brackets or Quotes (`replaceBracketsOrQuotes`)
 
 ![Demo](assets/demo02.gif)
 
-直近の開き括弧/閉じ括弧やクォートを任意の文字に置換
-何も入力せず決定（Enter を入力）することで括弧・クォートを削除
-複数カーソルにも対応
+Replace the nearest opening/closing bracket or quote with any character.
+Press Enter without typing anything to **delete** the bracket or quote.
+Supports multiple cursors.
 
-### 任意文字で囲む (`surroundWithInput`)
+### Surround With Input (`surroundWithInput`)
 
 ![Demo](assets/demo03.gif)
 
-選択範囲を指定した文字列で囲む
-HTML タグや括弧、クォートなど自由に設定可能
+Wrap the selected text with a specified string.
+Can freely use HTML tags, brackets, quotes, or any characters.
 
-## 対応言語
+---
+
+## Supported Languages
 
 - JavaScript / TypeScript
 - Python / Ruby
 - C / C++ / C# / Java
 - HTML / XML
 
-  上記以外の言語でも基本的な括弧・クォート操作は可能ですが、
-  コメントや特殊構文は正しく判定できない場合があります。
+Basic bracket and quote operations work in other languages, but **comments and special syntax may not be correctly recognized**.
 
-## インストール方法
+---
 
-1. VSCode で拡張機能ビューを開く
-2. 「Bracket & Quote Tools」を検索
-3. インストールボタンをクリック
-   またはローカルで .vsix パッケージを作成してインストール可能
+## Installation
 
-## 使い方
+1. Open the Extensions view in VSCode
+2. Search for **Bracket & Quote Tools**
+3. Click **Install**
+   - Alternatively, create a local `.vsix` package and install manually
 
-コマンドパレット (Ctrl+Shift+P / Cmd+Shift+P) で以下を検索
+---
+
+## Usage
+
+Open the Command Palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and search for:
 
 - BracketEx: Change Selection
 - BracketEx: Replace Brackets or Quotes
 - BracketEx: Surround With Input
 
-  キーボードショートカットを設定すると、より効率的に操作できます
+Or set up keyboard shortcuts (see below) for more efficient usage.
 
-## 注意事項
+---
 
-- 複雑な正規表現やコメント内の括弧は正しく認識されない場合があります。
-- マルチカーソル対応ですが、ネストが深すぎる場合は意図通りに動作しないことがあります。
-- 拡張の設定や動作は、VSCode のバージョンに依存する場合があります。
+## Commands
 
-## 開発者向け情報
+| Command ID                          | Description                                        |
+| ----------------------------------- | -------------------------------------------------- |
+| `bracketEx.changeSelection`         | Change selection based on cursor and brackets/tags |
+| `bracketEx.surroundWithInput`       | Wrap the selection with user input                 |
+| `bracketEx.replaceBracketsOrQuotes` | Replace the current bracket or quote with another  |
+
+---
+
+## Example Keyboard Shortcuts
+
+Add the following to `keybindings.json`:
+
+```json
+[
+  {
+    "key": "ctrl+alt+s",
+    "command": "extension.changeSelection",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+w",
+    "command": "extension.surroundWithInput",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+r",
+    "command": "extension.replaceBracketsOrQuotes",
+    "when": "editorTextFocus"
+  }
+]
+```
+
+## Notes
+
+- Complex regular expressions may not be recognized correctly.
+
+- Multi-cursor support is provided, but very deep nesting may cause unexpected behavior.
+
+- Extension behavior may depend on the VSCode version.
+
+## Developer Info
 
 {
 "repository": "https://github.com/yourname/bracket-quote-tools",
@@ -78,9 +127,12 @@ HTML タグや括弧、クォートなど自由に設定可能
 "vscodeVersion": "1.80+"
 }
 
-## フィードバック
+## Feedback
 
-- バグ報告や機能改善の提案は GitHub Issues で受け付けています。
-- 拡張機能の改善にぜひご協力ください。
+Bug reports and feature requests are accepted via GitHub Issues.
+
+Your contributions help improve this extension.
 
 ---
+
+by wanyako(Japan)

@@ -1,7 +1,7 @@
 {
   "name": "bracket-quote-tools",
   "displayName": "Bracket & Quote Tools",
-  "description": "",
+  "description": "Easily edit brackets, quotes, and tags in VSCode—select, wrap, replace, or remove with minimal keybindings.",
   "version": "1.0.0",
   "publisher": "wanyako",
   "engines": {
