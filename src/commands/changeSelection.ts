@@ -161,7 +161,10 @@ export function changeSelection() {
   if (!editor) return;
 
   const document = editor.document;
-  const isHtml = document.languageId === "html";
+  const isHtml =
+    document.languageId === "html" ||
+    document.languageId === "htm" ||
+    document.languageId === "xml";
 
   if (isHtml) {
     changeSelectionHtml();
