@@ -1,6 +1,6 @@
 # Bracket & Quote Tools
 
-A VSCode extension to simplify bracket, quote, and tag operations.
+A VSCode extension to simplify bracket & quote operations.
 It helps streamline selection changes, wrapping, replacement, and deletion of brackets during code editing.
 Designed to minimize the number of keybindings that require association.
 
@@ -14,18 +14,17 @@ Designed to minimize the number of keybindings that require association.
 
 ![Demo](assets/demo01.gif)
 
-Automatically selects the range of brackets or tags from the cursor position.
+Automatically selects the range of brackets from the cursor position.
 Executing repeatedly expands the selection as follows:
 
-1. Inner content not including the nearest bracket/tag
-2. Entire range including the nearest bracket/tag
-3. Inner content relative to one outer bracket/tag
-4. Entire range including one outer bracket/tag
+1. Inner content not including the nearest bracket
+2. Entire range including the nearest bracket
+3. Inner content relative to one outer bracket
+4. Entire range including one outer bracket
 5. Repeat steps 3 and 4
-6. If no outer bracket/tag is found, selection returns to the initial cursor position
+6. If no outer bracket is found, selection returns to the initial cursor position
 
 Supports multiple cursors.
-For HTML files, the selection expands in order: content → whole tag → parent tag content → entire parent tag.
 
 ### Replace Brackets or Quotes (`replaceBracketsOrQuotes`)
 
@@ -40,7 +39,7 @@ Supports multiple cursors.
 ![Demo](assets/demo03.gif)
 
 Wrap the selected text with a specified string.
-Can freely use HTML tags, brackets, quotes, or any characters.
+Can freely use brackets, quotes, or any characters.
 
 ---
 
@@ -49,7 +48,7 @@ Can freely use HTML tags, brackets, quotes, or any characters.
 - JavaScript / TypeScript
 - Python / Ruby
 - C / C++ / C# / Java
-- HTML / XML
+- Rust / Go
 
 Basic bracket and quote operations work in other languages, but **comments and special syntax may not be correctly recognized**.
 

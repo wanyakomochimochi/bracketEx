@@ -4,21 +4,13 @@ All notable changes to this extension will be documented here.
 
 ---
 
+## [1.1.0] - 2025-09-08
+
+- Stop handling html and other files
+
 ## [1.0.4] - 2025-09-07
 
 - Fixed missing support for XML and HTM
-
-## [1.0.3] - 2025-09-07
-
-- Minor Fix
-
-## [1.0.2] - 2025-09-07
-
-- Resize Demo Image
-
-## [1.0.1] - 2025-09-07
-
-- Icon added
 
 ## [1.0.0] - 2025-09-07
 

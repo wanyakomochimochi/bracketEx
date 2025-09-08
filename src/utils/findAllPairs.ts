@@ -113,6 +113,10 @@ function findCommentRanges(
     case "c":
     case "cpp":
     case "cs":
+    case "rs":
+    case "go":
+    case "jsx":
+    case "tsx":
       patterns.push(/\/\/.*/g); // 行コメント
       patterns.push(/\/\*[\s\S]*?\*\//g); // ブロックコメント
       break;
@@ -120,10 +124,6 @@ function findCommentRanges(
     case "rb":
       patterns.push(/#.*$/gm); // 行コメント
       patterns.push(/('{3}|"{3})[\s\S]*?\1/gm); // 複数行文字列コメント
-      break;
-    case "html":
-    case "xml":
-      patterns.push(/<!--[\s\S]*?-->/g); // コメント
       break;
     default:
       return ranges; // 未対応言語は空
